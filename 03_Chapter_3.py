@@ -1,11 +1,11 @@
-import numpy as np
+#import libraries
 import cv2 as cv
 from cv2 import cvtColor
 
-
+# load image
 img = cv.imgread('resourses/img1.jpg')
 
-
+#resize the image
 img1 = cv.resize(800,600)
 
 #conversion
