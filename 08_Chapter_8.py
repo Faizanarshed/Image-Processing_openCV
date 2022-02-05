@@ -9,7 +9,7 @@ cap = cv.VideoCapture('resourses/video.mkv')
 # writing format ,codec,video writer object and file output
 frame_width = int(cap.get(3))
 frame_height = int(cap.get(4))
-out = cv.VideoWriter('resourses/out_vedio.avi',cv.VideoWriter_fourcc('M',"j",'P','G'),10,(frame_width,frame_height))
+out = cv.VideoWriter('resourses/out_vedio.avi',cv.VideoWriter_fourcc('M',"J",'P','G'),10,(frame_width,frame_height),isColor= False)
 
 while (True):
     (ret,frame) =  cap.read()# read the video and convert into the frame
@@ -26,4 +26,5 @@ while (True):
         break 
 
 cap.release()
+out.release()
 cv.destroyAllWindows()
