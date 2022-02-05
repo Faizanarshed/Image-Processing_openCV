@@ -1,5 +1,6 @@
 
 import cv2 as cv
+from sympy import Q
 
 
 img = cv.imread('resourses/img1.jpeg')
