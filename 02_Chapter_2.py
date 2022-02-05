@@ -5,7 +5,7 @@ import cv2 as cv
 img = cv.imread('resourses/img1.jpeg')
 
 
-img1 = cv.resize(img,(800,600))
+img1 = cv.resize(img,(100,100))
 
 cv.imshow("Pahli Image",img)
 cv.imshow("Dusri image",img1)
