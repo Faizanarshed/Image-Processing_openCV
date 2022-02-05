@@ -2,10 +2,10 @@ import numpy as np
 import cv2 as cv
 
 
-img = cv.imgread('resourses/img1.jpg')
+img = cv.imgread('resourses/img1.jpeg')
 
 
-img = cv.resize(800,600)
+img = cv.resize(img,(800,600))
 
 
 cv.imshow("Original",img)
