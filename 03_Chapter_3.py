@@ -3,10 +3,10 @@ import cv2 as cv
 from cv2 import cvtColor
 
 # load image
-img = cv.imgread('resourses/img1.jpg')
+img = cv.imread('resourses/img1.jpg')
 
 #resize the image
-img1 = cv.resize(800,600)
+img = cv.resize(img,(800,600))
 
 #conversion
 gray_img = cvtColor(img,cv.COLOR_BGRGRAY)
