@@ -9,7 +9,7 @@ while (True):
     (ret,frame) =  cap.read()# read the video and convert into the frame
     grayframe = cv.cvtColor(frame,cv.COLOR_BGR2GRAY)#convert the video ito graycolor
     (thresh,binaryimg) = cv.threshold(grayframe,127,255,cv.THRESH_BINARY)#convert he video into the Binary
-    # To Show in Player
+    # To Show in Player updated
     if ret == True:
         #out.write(grayframe)
         cv.imshow('Original',frame) # Original image taken from webcam
