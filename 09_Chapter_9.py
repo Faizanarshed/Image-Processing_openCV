@@ -1,25 +1,28 @@
-# how to capture a webcam inside webcam
-# step 1 Import library
 import cv2 as cv
-import numpy as np
 
-#step 2 Read the frames from camera(webcame)
 
-cap = cv.VideoCapture(0)#webcam no 1
+# load a video into the code
+cap = cv.VideoCapture(0)
 
-# Step 3 Display Frame by Frame
-while(cap.isOpened()):
-    #capture frame by frame
-    ret,frame = cap.read()
+
+# writing format ,codec,video writer object and file output
+#frame_width = int(cap.get(3))
+#frame_height = int(cap.get(4))
+#out = cv.VideoWriter('resourses/out_vedio.avi',cv.VideoWriter_fourcc('M',"j",'P','G'),10,(frame_width,frame_height))
+
+while (True):
+    (ret,frame) =  cap.read()# read the video and convert into the frame
+    grayframe = cv.cvtColor(frame,cv.COLOR_BGR2GRAY)#convert the video ito graycolor
+    #(thresh,binaryimg) = cv.threshold(grayframe,127,255,cv.THRESH_BINARY)#convert he video into the black
+    # To Show in Player
     if ret == True:
-        #to display frame
-        cv.imshow("Frame", frame)
-        # to quite with q
+        #out.write(grayframe)
+        cv.imshow("vedio",grayframe)
+        # to quit with q key
         if cv.waitKey(1) & 0xFF == ord('q'):
             break
     else:
-        break
+        break 
 
-# Step 4 : Relese or close all the Windows
-cv.waitKey(0)
+cap.release()
 cv.destroyAllWindows()

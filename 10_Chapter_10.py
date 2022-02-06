@@ -1,21 +1,25 @@
-#
-
 import cv2 as cv
-import numpy as np
-from tkinter import Frame
 
+
+# load a video into the code with webcam
 cap = cv.VideoCapture(0)
 
-while(True):
-    (ret,frame)= cap.read()
-    gray_frame = cv.cvtColor(frame,cv.COLOR_BGR2GRAY)
-    (thresh,binaryimg) = cv.threshold(gray_frame,127,255,cv.THRESH_BINARY)
 
-    cv.imshow("original",frame)
-    cv.imshow("GrayCam",gray_frame)
-    cv.imshow("GrayCam",binaryimg)
-    if cv.waitKey(1) & 0xFF == ord('q'):
+while (True):
+    (ret,frame) =  cap.read()# read the video and convert into the frame
+    grayframe = cv.cvtColor(frame,cv.COLOR_BGR2GRAY)#convert the video ito graycolor
+    (thresh,binaryimg) = cv.threshold(grayframe,127,255,cv.THRESH_BINARY)#convert he video into the Binary
+    # To Show in Player updated
+    if ret == True:
+        #out.write(grayframe)
+        cv.imshow('Original',frame) # Original image taken from webcam
+        cv.imshow("Gray",grayframe) # Gray image after the conversion
+        cv.imshow('Black_white',binaryimg) #convert the webcam image into the Black and White Image
+        # to quit with q key
+        if cv.waitKey(1) & 0xFF == ord('q'):
             break
+    else:
+        break 
 
-cv.waitKey(0)
+cap.release()
 cv.destroyAllWindows()
