@@ -6,8 +6,8 @@ import cv2 as cv    #cv2 for openCV
 cap = cv.VideoCapture(0)    #activate the WebCam
 
 # Define the codec and create VideoWriter object
-fourcc = cv.VideoWriter_fourcc(*'XVID') #Set the Video Format
-out = cv.VideoWriter('resourses/output.avi', fourcc, 20.0, (640,  480))   #Video format and location of file where he will save
+fourcc = cv.VideoWriter_fourcc(*'MJPG') #Set the Video Format
+out = cv.VideoWriter('resourses/output1.avi', fourcc, 20.0, (640,  480))   #Video format and location of file where he will save
 while cap.isOpened():
     ret, frame = cap.read() # Read the webcam convert it into frames
     frame = cv.flip(frame, 1) # frame on flip 0 image will be 180 deg rotate
