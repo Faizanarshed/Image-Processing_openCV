@@ -20,20 +20,28 @@ blurr_img = cv.GaussianBlur(img, (3,3),0)
 edge_img = cv.Canny(img, 48,48)
 
 #thikness of lines
-mat_kernel = np.ones((7,7), np.uint8)
-dilated_img = cv.dilate(edge_img,(mat_kernel),(7,7),iterations=1)
+mat_kernel = np.ones((3,3), np.uint8)
+dilated_img = cv.dilate(edge_img, (mat_kernel),iterations=1)
+
 # make a Thinner OutLine
 ero_img = cv.erode(dilated_img,mat_kernel,iterations=1)
 
-#cv.imshow('original_image', img)
-#cv.imshow('ReShape_image', resize_img)
-#cv.imshow('Gray_image', Gray_img)
-#cv.imshow('Blur_image', blurr_img)
-#cv.imshow('Edge', edge_img)
-#cv.imshow('Dilated_image', dilated_img)
-#cv.imshow('mat_kernal',mat_kernel)
-#cv.imshow('Ero_image',ero_img)
+
+# Cropping Image we use numpy library not open cv
+print("the size of the image is: ",img.shape)
+cropped_img = img[0:500,150:400]
+
+# show image on the display
+cv.imshow('original_image', img)
+cv.imshow('ReShape_image', resize_img)
+cv.imshow('Gray_image', Gray_img)
+cv.imshow('Blur_image', blurr_img)
+cv.imshow('Edge', edge_img)
+cv.imshow('Dilated_image', dilated_img)
+cv.imshow('mat_kernal',mat_kernel)
+cv.imshow('Ero_image',ero_img)
 cv.imshow('Black_White Image',binaryimg)
+cv.imshow("cropped_img",cropped_img)
 #cv.imshow("frame",frame)
 cv.waitKey(0)
 cv.destroyAllWindows()
