@@ -7,7 +7,7 @@ cap = cv.VideoCapture(0)    #activate the WebCam
 frame_width = int(cap.get(3))
 frame_height = int(cap.get(4))
 # Define the codec and create VideoWriter object
-out = cv.VideoWriter('resourses/cam_out_vedio.avi',cv.VideoWriter_fourcc('M',"J",'P','G'),10,(frame_width,frame_height))
+out = cv.VideoWriter('resourses/cam_out_vedio1.avi',cv.VideoWriter_fourcc('M',"J",'P','G'),10,(frame_width,frame_height))
 
 while cap.isOpened():
     ret, frame = cap.read() # Read the webcam convert it into frames
