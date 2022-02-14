@@ -1,4 +1,4 @@
-#saving hd cam vedio Recording
+#   Saving HD WebCam vedio Recording
 import cv2 as cv
 import numpy as np
 from tblib import Frame

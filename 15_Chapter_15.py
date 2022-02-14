@@ -12,13 +12,14 @@ cap = cv.VideoCapture(0)
 #cap.set(4,720)
 # Set the Video resolution into HD Format
 # HD Video with an aspect ratio (AR) of 16:9
+# Define a Function 
 def hd_resolution():
     cap.set(3, 1280)    # 1280 columns
     cap.set(4, 720)     #  720 horizontal lines
     # set the resolution into SD Format
 def sd_resolution():
-    cap.set(3, 640)
-    cap.set(4, 480)
+    cap.set(3, 640)     # 640 columns
+    cap.set(4, 480)     # 480 columns
     # set the Resolution into 4K
 def fhd_resolution():
     cap.set(3, 1920)    # 1920 Columns
@@ -26,15 +27,16 @@ def fhd_resolution():
 # how to change and fix the frame 30fph
 #hd_resolution()
 #sd_resolution()
-fhd_resolution
+fhd_resolution # call a full HD function
 while(True):
-    ret,frame = cap.read()
+    ret,frame = cap.read() # read the webcam video convert it to frame and will show it later
     if ret == True:
-        cv.imshow("camera",frame)
-        if cv.waitKey(1) & 0xFF == ord('q'):
+        cv.imshow("camera",frame) #  Display of the webcam on the screen
+        if cv.waitKey(1) & 0xFF == ord('q'):    # quit the screen after pressing the q on the keyboard
             break
     else:
         break
-
+# release the values fom cap veriable
 cap.release()
+# close all windows
 cv.destroyAllWindows()
