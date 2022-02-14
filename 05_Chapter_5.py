@@ -1,4 +1,4 @@
-# conver an image into Black and White
+# Convert an Image into Black and White
 
 #import the labrary
 from cv2 import imshow, resize
