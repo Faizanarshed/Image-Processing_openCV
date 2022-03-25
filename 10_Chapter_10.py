@@ -1,12 +1,8 @@
 #Convert the webcamvideo into the different frames
-
 import cv2 as cv
-
-
 # load a video into the code with webcam
 cap = cv.VideoCapture(0)
-
-
+# use the while loop for the condition implimentation
 while (True):
     (ret,frame) =  cap.read()# read the video and convert into the frame
     grayframe = cv.cvtColor(frame,cv.COLOR_BGR2GRAY)#convert the video ito graycolor
@@ -22,6 +18,6 @@ while (True):
             break
     else:
         break 
-
+# release and destroy all the resourses which both the veriables uses
 cap.release()
 cv.destroyAllWindows()
